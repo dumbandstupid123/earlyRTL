@@ -1,0 +1,10 @@
+pdk: sky130
+clock_period_ns: 2.0        # 500MHz
+input_delay_pct: 0.2        # 20% of clock period
+output_delay_pct: 0.2
+wire_delay_factor: 1.4      # 40% added to gate delay for estimated wire delay
+warning_threshold_pct: 0.2  # warn if slack < 20% of period
+anthropic_api_key: ${ANTHROPIC_API_KEY}
+yosys_path: yosys
+sta_path: sta
+cache_dir: .rtlsense_cache

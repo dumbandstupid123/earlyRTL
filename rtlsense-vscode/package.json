@@ -1,0 +1,51 @@
+{
+  "name": "rtlsense",
+  "displayName": "RTLSense",
+  "description": "Real-time timing analysis for Verilog — squiggles on timing violations",
+  "version": "0.1.0",
+  "publisher": "sandeep-ramlochan",
+  "engines": { "vscode": "^1.60.0" },
+  "categories": ["Linters"],
+  "activationEvents": ["onLanguage:verilog", "onLanguage:systemverilog", "onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rtlsense.analyze",
+        "title": "RTLSense: Analyze Current File"
+      }
+    ],
+    "languages": [
+      {
+        "id": "verilog",
+        "aliases": ["Verilog", "verilog"],
+        "extensions": [".v", ".vh"]
+      },
+      {
+        "id": "systemverilog",
+        "aliases": ["SystemVerilog", "systemverilog"],
+        "extensions": [".sv", ".svh"]
+      }
+    ],
+    "configuration": {
+      "title": "RTLSense",
+      "properties": {
+        "rtlsense.clock": {
+          "type": "string",
+          "default": "500MHz",
+          "description": "Target clock frequency (e.g. 100MHz, 500MHz, 1GHz)"
+        },
+        "rtlsense.venvPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the Python venv containing rtlsense (e.g. /Users/you/silimate_demo/venv)"
+        },
+        "rtlsense.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable RTLSense timing analysis on save"
+        }
+      }
+    }
+  }
+}

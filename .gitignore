@@ -1,0 +1,20 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# RTLSense local config & cache
+rtlsense.yaml
+.rtlsense_cache/
+
+# PDK liberty files (downloaded by setup.sh)
+pdk/sky130/*.lib
+pdk/asap7/*.lib
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# macOS
+.DS_Store
